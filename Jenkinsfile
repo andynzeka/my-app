@@ -1,4 +1,3 @@
-# @Library("jhc-libs") _
 
 pipeline{
     agent any

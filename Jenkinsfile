@@ -8,17 +8,12 @@ pipeline{
     stages{
         stage("Code Checkout"){
             steps{
-                git credentialsId: 'github-creds', url: 'https://github.com/javahometech/my-app'
+                git 'https://github.com/andynzeka/my-app'
             }
         }
         stage("Maven Build"){
             steps{
                 sh 'mvn clean package'
-            }
-        }
-        stage("Tomcat Deploy Dev"){
-            steps{
-                tomcatDeploy("tomcat-dev",TOMCAT_USER,TOMCAT_IP)
             }
         }
     }
